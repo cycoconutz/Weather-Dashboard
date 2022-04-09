@@ -12,6 +12,38 @@
     <title>Weather Dashboard</title>
 </head>
 <body>
-    
+    <nav class="navbar justify-content-center">
+        <span id="header" class="navbar-brand mb-0 h1 text-white">Weather Dashboard</span>
+    </nav>   
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <aside id="search" class="col-12 col-lg-3">
+                <p id="search-header" class="text-weight-bold">Search for a City:</p>
+                <input class="form-control form-control-lg" type="text" placeholder="Type in a city">
+                <input id="search-btn" class="btn btn-info text-white mt-3 w-100" type="submit" value="Search">
+                <div id="border">
+
+                </div>
+                <button type="button" id ="austin-btn" class="btn btn-secondary w-100 mt-3">Austin</button>
+                <button type="button" class="btn btn-secondary">Los Angeles</button>
+                <button type="button" class="btn btn-secondary">Chicago</button>
+                <button type="button" class="btn btn-secondary">New York</button>
+                <button type="button" class="btn btn-secondary">Seattle</button>
+                <button type="button" class="btn btn-secondary">Orlando</button>
+                <button type="button" class="btn btn-secondary">Denver</button>
+                <button type="button" class="btn btn-secondary">Atlanta</button>
+            </aside>
+            <section id="display" class="col-12 col-lg-9">
+            </section>
+            <section id="forecast" class="col-12 col-lg-9">
+                <p id="forecast-header">5-Day Forecast:</p>
+                <div class="col"></div>
+                <div class="col"></div>
+                <div class="col"></div>
+                <div class="col"></div>
+                <div class="col"></div>
+            </section>
+        </div>
+    </div>
 </body>
 </html>

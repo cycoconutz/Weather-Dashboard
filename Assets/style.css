@@ -1,0 +1,29 @@
+.navbar{
+    background: rgb(59,110,196);
+    background: linear-gradient(90deg, rgba(59,110,196,1) 0%, rgba(34,3,84,1) 100%, rgba(2,0,36,1) 100%);
+}
+#header{
+    font-size:36px;
+    font-weight:700;
+}
+#search-header{
+    font-size:32px;
+    font-weight:bolder;
+}
+#search-btn{
+    font-size:18px;
+}
+#border{
+    padding-top:15px;
+    border-bottom:2px solid black;
+}
+.btn-secondary{
+    background-color: rgb(183,183,183);
+    color:black;
+    width:100%;
+    margin-top:1.25rem;
+}
+#forecast-header{
+    font-size:32px;
+    font-weight:bolder;
+}
