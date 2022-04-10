@@ -17,6 +17,9 @@
     padding-top:15px;
     border-bottom:2px solid black;
 }
+#display-container{
+    border: 1px solid black;
+}
 .btn-secondary{
     background-color: rgb(183,183,183);
     color:black;
@@ -26,4 +29,7 @@
 #forecast-header{
     font-size:32px;
     font-weight:bolder;
+}
+.card{
+    max-width: 18rem;
 }

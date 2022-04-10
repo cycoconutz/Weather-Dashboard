@@ -15,7 +15,7 @@
     <nav class="navbar justify-content-center">
         <span id="header" class="navbar-brand mb-0 h1 text-white">Weather Dashboard</span>
     </nav>   
-    <div class="row justify-space-between mt-3">
+    <div class="row mt-3">
             <div id="search" class="col-12 col-md-3">
                 <p id="search-header" class="text-weight-bold">Search for a City:</p>
                 <form id="search-form">
@@ -23,14 +23,22 @@
                 <input id="search-btn" class="btn btn-info text-white mt-3 w-100" type="submit" value="Search"></form>
                 <div id="border"></div>
                 <button type="button" id ="austin-btn" class="btn btn-secondary w-100 mt-3">Austin</button>
+                <button type="button" id ="austin-btn" class="btn btn-secondary w-100 mt-3">Austin</button>
+                <button type="button" id ="austin-btn" class="btn btn-secondary w-100 mt-3">Austin</button>
+                <button type="button" id ="austin-btn" class="btn btn-secondary w-100 mt-3">Austin</button>
+                <button type="button" id ="austin-btn" class="btn btn-secondary w-100 mt-3">Austin</button>
                 </div>
-            <section id="display-container" class="col-12 col-md-9">
+
+        <div class=" col-12 col-md-9"> 
+            <section id="display-container" class="">
                 <h2 id="display-header" class="media-body">Type in a city into the search bar</h2>
             </section>
-            <section class="col-12 col-md-9">
+            
+            <section id="forecast-container" class="">
                 <p id="forecast-header">5-Day Forecast:</p>
-                <div id="forecast" class="card"></div>
+                <div id="forecast" class="card col"></div>
             </section>
+        </div> 
     </div>
     <script src="./Assets/script.js"></script>
 </body>
