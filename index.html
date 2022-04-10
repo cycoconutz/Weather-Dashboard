@@ -15,15 +15,12 @@
     <nav class="navbar justify-content-center">
         <span id="header" class="navbar-brand mb-0 h1 text-white">Weather Dashboard</span>
     </nav>   
-    <div class="container-fluid mt-3">
-        <div class="row">
+    <div class="container-fluid flex-row mt-3">
             <aside id="search" class="col-12 col-lg-3">
                 <p id="search-header" class="text-weight-bold">Search for a City:</p>
-                <input class="form-control form-control-lg" type="text" placeholder="Type in a city">
+                <input id="input" class="form-control form-control-lg" type="text" placeholder="Type in a city">
                 <input id="search-btn" class="btn btn-info text-white mt-3 w-100" type="submit" value="Search">
-                <div id="border">
-
-                </div>
+                <div id="border"></div>
                 <button type="button" id ="austin-btn" class="btn btn-secondary w-100 mt-3">Austin</button>
                 <button type="button" class="btn btn-secondary">Los Angeles</button>
                 <button type="button" class="btn btn-secondary">Chicago</button>
@@ -33,17 +30,13 @@
                 <button type="button" class="btn btn-secondary">Denver</button>
                 <button type="button" class="btn btn-secondary">Atlanta</button>
             </aside>
-            <section id="display" class="col-12 col-lg-9">
+            <section id="display-container" class="col-12 col-lg-9">
+                <h2 id="display-header"></h2>
             </section>
-            <section id="forecast" class="col-12 col-lg-9">
+            <section class="col-12 col-lg-9">
                 <p id="forecast-header">5-Day Forecast:</p>
-                <div class="col"></div>
-                <div class="col"></div>
-                <div class="col"></div>
-                <div class="col"></div>
-                <div class="col"></div>
+                <div id="forecast" class="card"></div>
             </section>
-        </div>
     </div>
 </body>
 </html>
