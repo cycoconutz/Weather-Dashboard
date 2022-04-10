@@ -12,10 +12,10 @@
 }
 #search-btn{
     font-size:18px;
+    margin-bottom:20px;
 }
 #border{
-    padding-top:15px;
-    border-bottom:2px solid black;
+    border-top:2px solid black;
 }
 #display-container{
     border: 1px solid black;
@@ -26,10 +26,15 @@
     width:100%;
     margin-top:1.25rem;
 }
-#forecast-header{
+#forecast-title{
     font-size:32px;
     font-weight:bolder;
+    margin-top:10px;
 }
 .card{
-    max-width: 18rem;
+    min-width: 14rem;
+    max-width: 14rem;
+    margin-right:10px;
+    margin-left:12px;
+    margin-bottom:10px;
 }

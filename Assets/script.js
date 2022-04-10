@@ -2,8 +2,9 @@ var searchFormEl = document.querySelector('#search-form');
 var inputEl = document.querySelector('#input');
 var displayEl = document.querySelector('#display-container');
 var displayHeaderEl = document.querySelector('#display-header');
-var forecastEl = document.querySelector('#forecast');
-var currentDate = moment().format("LL")
+var forecastEl = document.querySelector('#forecast-header');
+var currentDate = moment().format("LL");
+var buttonParent = document.querySelector('#border');
 var api = "826f768fd9f365ffb041a6709f34bfbc";
 
 var formSubmitHandler = function (event) {
@@ -12,8 +13,20 @@ var formSubmitHandler = function (event) {
     console.log(location);
     getWeather(location);
     getForecast(location);
+    history(location);
 };
 
+function history(location){
+    var inputLocation = location.charAt(0).toUpperCase() + location.slice(1);
+    var newButt = document.createElement('button')
+    newButt.type = "button"
+    newButt.classList = "btn btn-secondary w-100 mt-3 mb-3"
+    newButt.textContent = inputLocation;
+    buttonParent.appendChild(newButt);
+
+    // localStore = document.getElementsByClassName('btn-secondary');
+    // localStorage.setItem('butt', newButt.textContent);
+};
 var getWeather = function (city) {
     var apiUrl = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + api +'&units=imperial';  
     fetch(apiUrl)
@@ -88,7 +101,7 @@ var displayForecast = function (cityForecast){
 
 
         var card = document.createElement('div');
-        card.classList = 'card text-white bg-dark mb-3 col-2'
+        card.classList = 'card text-white bg-dark col-4 '
         var cardHead = document.createElement('div');
         cardHead.classList = "card-header"
         cardHead.textContent = date;
