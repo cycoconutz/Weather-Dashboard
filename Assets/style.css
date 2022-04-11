@@ -1,40 +1,48 @@
-.navbar{
-    background: rgb(59,110,196);
-    background: linear-gradient(90deg, rgba(59,110,196,1) 0%, rgba(34,3,84,1) 100%, rgba(2,0,36,1) 100%);
+.navbar {
+    background: rgb(59, 110, 196);
+    background: linear-gradient(90deg, rgba(59, 110, 196, 1) 0%, rgba(34, 3, 84, 1) 100%, rgba(2, 0, 36, 1) 100%);
 }
-#header{
-    font-size:36px;
-    font-weight:700;
+
+#header {
+    font-size: 36px;
+    font-weight: 700;
 }
-#search-header{
-    font-size:32px;
-    font-weight:bolder;
+
+#search-header {
+    font-size: 32px;
+    font-weight: bolder;
 }
-#search-btn{
-    font-size:18px;
-    margin-bottom:20px;
+
+#search-btn {
+    font-size: 18px;
+    margin-bottom: 20px;
 }
-#border{
-    border-top:2px solid black;
+
+#border {
+    border-top: 2px solid black;
 }
-#display-container{
+
+#display-container {
     border: 1px solid black;
 }
-.btn-secondary{
-    background-color: rgb(183,183,183);
-    color:black;
-    width:100%;
-    margin-top:1.25rem;
+
+.btn-secondary {
+    background-color: rgb(183, 183, 183);
+    color: black;
+    width: 100%;
+    margin-top: 1.25rem;
 }
-#forecast-title{
-    font-size:32px;
-    font-weight:bolder;
-    margin-top:10px;
+
+#forecast-title {
+    font-size: 32px;
+    font-weight: bolder;
+    margin-top: 10px;
 }
-.card{
+
+.card {
     min-width: 14rem;
     max-width: 14rem;
-    margin-right:10px;
-    margin-left:12px;
-    margin-bottom:10px;
+    margin-right: 10px;
+    margin-left: 12px;
+    margin-bottom: 10px;
 }

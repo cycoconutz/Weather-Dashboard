@@ -5,7 +5,9 @@ var displayHeaderEl = document.querySelector('#display-header');
 var forecastEl = document.querySelector('#forecast-header');
 var currentDate = moment().format("LL");
 var buttonParent = document.querySelector('#border');
+var searchHistoryEl = document.querySelector('#search-history')
 var api = "826f768fd9f365ffb041a6709f34bfbc";
+var savedCity = [];
 //Runs on Search Button Click
 var formSubmitHandler = function (event) {
     event.preventDefault();
@@ -13,23 +15,27 @@ var formSubmitHandler = function (event) {
     console.log(location);
     getWeather(location);
     getForecast(location);
-    history(location);
+    populateHistory(location);
 };
 //Creates and Populates History Buttons
-function history(location) {
-    var inputLocation = location.charAt(0).toUpperCase() + location.slice(1);
-    var newButt = document.createElement('button')
-    newButt.type = "button"
-    newButt.classList = "btn btn-secondary w-100 mt-3 mb-3"
-    newButt.textContent = inputLocation;
-    buttonParent.appendChild(newButt);
+var populateHistory = function (city) {
+    var newButt = document.createElement("button");
+    newButt.setAttribute("class", "btn btn-secondary col-12 w-100 mb-3");
+    newButt.textContent = city;
+    savedCity.unshift(city);
+    searchHistoryEl.prepend(newButt);
+    if (savedCity.length > 10) {
+        savedCity.splice(10);
+        var badChild = document.querySelector('#search-history :nth-child(10)');
+        badChild.remove();
+    }
+    localStorage.setItem("savedCity", JSON.stringify(savedCity));
+}
 
-    // localStore = document.getElementsByClassName('btn-secondary');
-    // localStorage.setItem('butt', newButt.textContent);
-};
 // Fetches Weather Data
 var getWeather = function (city) {
     var apiUrl = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + api + '&units=imperial';
+    console.log(apiUrl)
     fetch(apiUrl)
         .then(function (response) {
             if (response.ok) {
@@ -70,7 +76,6 @@ var displayWeather = function (cityWeather) {
     var displayWind = document.createElement('h3')
     var weatherHumid = cityWeather.main.humidity + '%'
     var displayHumid = document.createElement('h3')
-
 
     displayWeather.textContent = "Temp: " + weatherTemp;
     displayWind.textContent = "Wind: " + weatherWind;
@@ -130,3 +135,22 @@ var displayForecast = function (cityForecast) {
 
 //Event Listener for Submit Button
 searchFormEl.addEventListener('submit', formSubmitHandler);
+
+function init() {
+    savedCity = JSON.parse(localStorage.getItem("savedCity"));
+    if (savedCity === []) {
+        return
+    }
+    if (!savedCity) {
+        savedCity = [];
+        return
+    }
+    for (i = 0; i < savedCity.length; i++) {
+        var newButt = document.createElement("button");
+        newButt.setAttribute("class", "btn btn-secondary col-12 w-100 mb-3");
+        newButt.textContent = savedCity[i];
+        searchHistoryEl.appendChild(newButt);
+    }
+}
+
+init();
