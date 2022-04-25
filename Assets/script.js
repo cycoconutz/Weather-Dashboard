@@ -6,8 +6,10 @@ var forecastEl = document.querySelector('#forecast-header');
 var currentDate = moment().format("LL");
 var buttonParent = document.querySelector('#border');
 var searchHistoryEl = document.querySelector('#search-history')
+var historyButt = document.getElementsByClassName('.history')
 var api = "826f768fd9f365ffb041a6709f34bfbc";
 var savedCity = [];
+
 //Runs on Search Button Click
 var formSubmitHandler = function (event) {
     event.preventDefault();
@@ -17,10 +19,20 @@ var formSubmitHandler = function (event) {
     getForecast(location);
     populateHistory(location);
 };
+
+var historyHandler = function (event) {
+    event.preventDefault();
+    var location = event.target.value
+    console.log(location);
+    getWeather(location);
+    getForecast(location);
+    populateHistory(location);
+};
+
 //Creates and Populates History Buttons
 var populateHistory = function (city) {
     var newButt = document.createElement("button");
-    newButt.setAttribute("class", "btn btn-secondary col-12 w-100 mb-3");
+    newButt.setAttribute("class", "history btn btn-secondary col-12 w-100 mb-3");
     newButt.textContent = city;
     savedCity.unshift(city);
     searchHistoryEl.prepend(newButt);
@@ -135,6 +147,10 @@ var displayForecast = function (cityForecast) {
 
 //Event Listener for Submit Button
 searchFormEl.addEventListener('submit', formSubmitHandler);
+// searchHistoryEl.addEventListener('click', historyHandler);
+forEach(historyButt => {
+    historyButt.addEventListener('click', historyHandler);
+});
 
 function init() {
     savedCity = JSON.parse(localStorage.getItem("savedCity"));
@@ -147,7 +163,7 @@ function init() {
     }
     for (i = 0; i < savedCity.length; i++) {
         var newButt = document.createElement("button");
-        newButt.setAttribute("class", "btn btn-secondary col-12 w-100 mb-3");
+        newButt.setAttribute("class", "history btn btn-secondary col-12 w-100 mb-3");
         newButt.textContent = savedCity[i];
         searchHistoryEl.appendChild(newButt);
     }
