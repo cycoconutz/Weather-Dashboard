@@ -30,6 +30,7 @@ None
 ## Description
 A website that utilizes a weather API where a user can input a city name to search for the current weather as well as the 5 day forecast.
 
+<img src="./Assets/my-demo.png" alt="">
 
 ## Usage
 N/a
