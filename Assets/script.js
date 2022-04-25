@@ -46,7 +46,7 @@ var populateHistory = function (city) {
 
 // Fetches Weather Data
 var getWeather = function (city) {
-    var apiUrl = 'http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + api + '&units=imperial';
+    var apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + api + '&units=imperial';
     console.log(apiUrl)
     fetch(apiUrl)
         .then(function (response) {
@@ -63,7 +63,7 @@ var getWeather = function (city) {
 };
 // Fetches Forecast Data
 var getForecast = function (city) {
-    var apiUrl = 'http://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=' + api + '&units=imperial';
+    var apiUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&appid=' + api + '&units=imperial';
     fetch(apiUrl)
         .then(function (response) {
             if (response.ok) {
@@ -95,7 +95,7 @@ var displayWeather = function (cityWeather) {
 
 
     iconURL.classList = 'media'
-    iconURL.src = 'http://openweathermap.org/img/wn/' + weatherIcon + '@2x.png';
+    iconURL.src = 'https://openweathermap.org/img/wn/' + weatherIcon + '@2x.png';
     displayHeaderEl.textContent = cityName + " " + currentDate;
     displayHeaderEl.appendChild(iconURL);
     displayHeaderEl.appendChild(displayWeather);
@@ -125,7 +125,7 @@ var displayForecast = function (cityForecast) {
         cardHead.textContent = date;
         var cardIcon = document.createElement('img');
         cardIcon.classList = 'media';
-        cardIcon.src = 'http://openweathermap.org/img/wn/' + icon + '@2x.png';
+        cardIcon.src = 'https://openweathermap.org/img/wn/' + icon + '@2x.png';
         var cardTemp = document.createElement('h5');
         cardTemp.classList = 'card-title';
         cardTemp.textContent = temp;
